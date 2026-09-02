@@ -26,7 +26,7 @@ PREMIUM_LINK = os.environ.get("PREMIUM_LINK", "https://t.me/NgPremiumX")
 ADMIN_ID = int(os.environ.get("ADMIN_ID", "0"))  # your own Telegram user ID, for /stats command
 
 MONGO_URI = os.environ["MONGO_URI"]          # mongodb+srv://... (from MongoDB Atlas)
-MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "tgbot1")
+MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "tgbot")
 
 # ---------------- DATABASE SETUP ----------------
 client = MongoClient(MONGO_URI)
@@ -39,9 +39,9 @@ settings_col = db["settings"]  # { _id: slot_number, url }
 posts_col.create_index("channel_message_id", unique=True)
 
 LINK_LABELS = {
-    1: "👨‍💻 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧",
-    2: "📢 𝙋𝙧𝙚𝙢𝙞𝙪𝙢 𝙈𝙈𝙎 𝘾𝙝𝙖𝙣𝙣𝙚𝙡",
-    3: "🎬 𝙁𝙧𝙚𝙚 𝙑𝙞𝙙𝙚𝙤𝙨",
+    1: "👨‍💻 Developer",
+    2: "📢 Latest Channel",
+    3: "🎬 Free Videos",
 }
 
 MAIN_KEYBOARD = ReplyKeyboardMarkup(
@@ -192,9 +192,6 @@ def build_keyboard(post_doc, nav_older_id=None, nav_top_id=None):
 
     kb_rows.append([
         InlineKeyboardButton(f"❤️ {post_doc['hearts']}", callback_data=f"heart:{post_doc['_id']}"),
-    ])
-    kb_rows.append([
-        InlineKeyboardButton("💎 Buy Premium / Remove Ads", url=PREMIUM_LINK)
     ])
 
     if nav_older_id is not None:
