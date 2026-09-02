@@ -26,7 +26,7 @@ PREMIUM_LINK = os.environ.get("PREMIUM_LINK", "https://t.me/NgPremiumX")
 ADMIN_ID = int(os.environ.get("ADMIN_ID", "0"))  # your own Telegram user ID, for /stats command
 
 MONGO_URI = os.environ["MONGO_URI"]          # mongodb+srv://... (from MongoDB Atlas)
-MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "tgbot")
+MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "tgbot1")
 
 # ---------------- DATABASE SETUP ----------------
 client = MongoClient(MONGO_URI)
