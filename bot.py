@@ -39,9 +39,9 @@ settings_col = db["settings"]  # { _id: slot_number, url }
 posts_col.create_index("channel_message_id", unique=True)
 
 LINK_LABELS = {
-    1: "👨‍💻 Developer",
-    2: "📢 Latest Channel",
-    3: "🎬 Free Videos",
+    1: "👨‍💻 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧",
+    2: "📢 𝙋𝙧𝙚𝙢𝙞𝙪𝙢 𝘿𝙚𝙨𝙞 𝙈𝙈𝙎",
+    3: "🎬 𝙁𝙧𝙚𝙚 𝙑𝙞𝙙𝙚𝙤𝙨",
 }
 
 MAIN_KEYBOARD = ReplyKeyboardMarkup(
